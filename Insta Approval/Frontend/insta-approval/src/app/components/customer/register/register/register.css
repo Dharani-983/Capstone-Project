@@ -1,0 +1,105 @@
+/* Make sure body & html take full height */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* Host container covers entire screen */
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Card styling */
+mat-card.register-card {
+  width: 100%;
+  max-width: 520px;
+  background: #fff;
+  padding: 40px 35px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  animation: fadeInUp 0.6s ease;
+}
+
+/* Title */
+mat-card.register-card h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 26px;
+  font-weight: 700;
+  color: #333;
+}
+
+/* Form fields */
+mat-form-field.full-width {
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+/* Material input background */
+.mat-mdc-form-field-flex {
+  background: #f7f7f7;
+  border-radius: 8px;
+  padding: 5px 12px;
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.mat-mdc-form-field-flex:hover {
+  background: #fff;
+  border-color: #667eea;
+  box-shadow: 0 0 5px rgba(102,126,234,0.3);
+}
+
+.mat-mdc-text-field-wrapper input {
+  color: #333 !important;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Buttons */
+button.full-width {
+  width: 100%;
+  margin-top: 12px;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Primary button */
+button[color="primary"] {
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+  color: #fff;
+}
+
+button[color="primary"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(56, 249, 215, 0.4);
+}
+
+/* Secondary button */
+button[color="accent"] {
+  background: linear-gradient(135deg, #f7971e, #ffd200);
+  color: #fff;
+}
+
+button[color="accent"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 210, 0, 0.4);
+}
+
+/* Entrance animation */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+}

@@ -1,0 +1,49 @@
+<mat-card class="register-card">
+  <h2>Register</h2>
+
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Phone</mat-label>
+      <input matInput [type]="'phone'" formControlName="phone" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Password</mat-label>
+      <input matInput [type]="'password'" formControlName="password" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Address</mat-label>
+      <input matInput [type]="'address'" formControlName="address" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Date Of Birth</mat-label>
+      <input matInput [type]="'dateOfBirth'" formControlName="dateOfBirth" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Cibil Score</mat-label>
+      <input matInput [type]="'cibilScore'" formControlName="cibilScore" />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" class="full-width" [disabled]="registrationForm.invalid">
+      Register
+    </button>
+
+     <button mat-raised-button color="accent" class="full-width" type="button" (click)="goToLogin()">
+      Login
+    </button>
+
+  </form>
+</mat-card>

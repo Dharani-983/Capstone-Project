@@ -1,0 +1,38 @@
+package com.customer.customer_service.mapper;
+
+import org.springframework.stereotype.Component;
+
+import com.customer.customer_service.dto.CustomerDTO;
+import com.customer.customer_service.entity.Customer;
+
+@Component
+public class CustomerMapper {
+
+    public static CustomerDTO toDTO(Customer customer) {
+        if (customer == null) return null;
+
+        return CustomerDTO.builder()
+                .customerId(customer.getCustomerId())
+                .name(customer.getName())
+                .email(customer.getEmail())
+                .phone(customer.getPhone())
+                .address(customer.getAddress())
+                .dateOfBirth(customer.getDateOfBirth())
+                .cibilScore(customer.getCibilScore())
+                .build();
+    }
+
+    public static Customer toEntity(CustomerDTO dto) {
+        if (dto == null) return null;
+
+        return Customer.builder()
+                .customerId(dto.getCustomerId())
+                .name(dto.getName())
+                .email(dto.getEmail())
+                .phone(dto.getPhone())
+                .address(dto.getAddress())
+                .dateOfBirth(dto.getDateOfBirth())
+                .cibilScore(dto.getCibilScore())
+                .build();
+	    }
+}

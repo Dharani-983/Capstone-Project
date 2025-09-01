@@ -1,0 +1,111 @@
+/* Full page background */
+main.main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  padding: 2rem;
+  box-sizing: border-box;
+  animation: fadeIn 1.2s ease;
+}
+
+/* Content container */
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-radius: 16px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 900px;
+  gap: 2rem;
+  animation: slideUp 0.8s ease;
+}
+
+/* Left side with heading */
+.left-side h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #ff4b2b, #ff416c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.left-side p {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+/* Divider */
+.divider {
+  width: 2px;
+  background: linear-gradient(180deg, #ff416c, #2575fc);
+  border-radius: 2px;
+}
+
+/* Pill (buttons for roles) */
+.pill {
+  display: flex;
+  align-items: center;
+  background: #f1f5ff;
+  color: #2575fc;
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.pill:hover {
+  background: #2575fc;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 117, 252, 0.3);
+}
+
+/* Social links */
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.social-links a svg path {
+  transition: fill 0.3s ease;
+  fill: #888;
+}
+
+.social-links a:hover svg path {
+  fill: #2575fc;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive for small screens */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .divider {
+    display: none;
+  }
+}

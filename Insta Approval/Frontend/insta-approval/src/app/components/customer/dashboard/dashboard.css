@@ -1,0 +1,73 @@
+/* Full page background & centering */
+.page-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;  /* center horizontally */
+  align-items: center;      /* center vertically */
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Dashboard card */
+.register-card {
+  background: #fff;
+  padding: 3rem 2.5rem;
+  border-radius: 18px;
+  width: 400px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  animation: fadeIn 0.8s ease;
+}
+
+.register-card h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ff416c, #ff4b2b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;       /* prevents clipping */
+  line-height: 1.4;            /* adds breathing room */
+  padding: 5px 0;              /* avoids cut at top/bottom */
+}
+
+
+/* Buttons */
+button.full-width {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Primary button */
+.btn-primary {
+  background: linear-gradient(90deg, #2575fc, #6a11cb);
+  color: #fff;
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(37, 117, 252, 0.35);
+}
+
+/* Accent button */
+.btn-accent {
+  background: linear-gradient(90deg, #ff416c, #ff4b2b);
+  color: #fff;
+}
+.btn-accent:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(255, 65, 108, 0.35);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}

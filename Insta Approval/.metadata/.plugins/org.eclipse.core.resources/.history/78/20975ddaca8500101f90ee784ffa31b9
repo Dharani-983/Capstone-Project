@@ -1,0 +1,5 @@
+package com.customer.customer_service.controller;
+
+public class LoginDTO {
+
+}

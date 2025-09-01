@@ -1,0 +1,100 @@
+package com.customer.customer_service.service.impl;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.customer.customer_service.constants.ErrorMessages;
+import com.customer.customer_service.dto.AuthResponseDTO;
+import com.customer.customer_service.dto.CustomerDTO;
+import com.customer.customer_service.entity.Customer;
+import com.customer.customer_service.exception.ResourceNotFoundException;
+import com.customer.customer_service.mapper.CustomerMapper;
+import com.customer.customer_service.repository.CustomerRepository;
+import com.customer.customer_service.service.CustomerService;
+import com.customer.customer_service.util.JwtUtil;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
+@Service
+@Slf4j
+@RequiredArgsConstructor
+public class CustomerServiceImpl implements CustomerService {
+
+    private final CustomerRepository customerRepository;
+    private final JwtUtil jwtUtil;
+    private final CustomerMapper mapper;
+    private final PasswordEncoder passwordEncoder;
+
+    @Override
+    public CustomerDTO registerCustomer(CustomerDTO customerDTO) {
+        if (customerRepository.findByEmail(customerDTO.getEmail()).isPresent()) {
+            throw new IllegalArgumentException(ErrorMessages.EMAIL_ALREADY_EXISTS + customerDTO.getEmail());
+        }
+        Customer customer = mapper.toEntity(customerDTO);
+        customer.setPassword(passwordEncoder.encode(customerDTO.getPassword()));
+        if (customer.getCibilScore() == null) customer.setCibilScore(700);
+        Customer saved = customerRepository.save(customer);
+        return mapper.toDTO(saved);
+    }
+
+    @Override
+    public AuthResponseDTO login(String email, String password) {
+        Customer customer = customerRepository.findByEmail(email)
+                .orElseThrow(() -> new ResourceNotFoundException(ErrorMessages.INVALID_CREDENTIALS));
+
+        if (!passwordEncoder.matches(password, customer.getPassword())) {
+            throw new ResourceNotFoundException(ErrorMessages.INVALID_CREDENTIALS);
+        }
+
+        String token = jwtUtil.generateToken(email, List.of("CUSTOMER"));
+
+        return AuthResponseDTO.builder()
+                .email(email)
+                .token(token)
+                .build();
+    }
+
+    @Override
+    public CustomerDTO getCustomerById(Long id) {
+        Customer customer = customerRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException(ErrorMessages.CUSTOMER_NOT_FOUND + id));
+        return mapper.toDTO(customer);
+    }
+
+    @Override
+    public CustomerDTO updateCustomer(Long id, CustomerDTO customerDTO) {
+        Customer customer = customerRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException(ErrorMessages.CUSTOMER_NOT_FOUND + id));
+
+        customer.setName(customerDTO.getName());
+        customer.setEmail(customerDTO.getEmail());
+        customer.setPhone(customerDTO.getPhone());
+        customer.setAddress(customerDTO.getAddress());
+        customer.setDateOfBirth(customerDTO.getDateOfBirth());
+        customer.setCibilScore(customerDTO.getCibilScore());
+
+        if (customerDTO.getPassword() != null && !customerDTO.getPassword().isEmpty()) {
+            customer.setPassword(passwordEncoder.encode(customerDTO.getPassword()));
+        }
+
+        return mapper.toDTO(customerRepository.save(customer));
+    }
+
+    @Override
+    public void deleteCustomer(Long id) {
+        Customer customer = customerRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException(ErrorMessages.CUSTOMER_NOT_FOUND + id));
+        customerRepository.delete(customer);
+    }
+    @Override public List<CustomerDTO> getAllCustomers() { 
+    	return customerRepository.findAll()
+    			.stream() 
+    			.map(customer -> mapper.toDTO(customer)) 
+    			.collect(Collectors.toList()); 
+    
+    }
+}
