@@ -11,5 +11,4 @@ public class LoanEurekaServerApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(LoanEurekaServerApplication.class, args);
 	}
-
 }

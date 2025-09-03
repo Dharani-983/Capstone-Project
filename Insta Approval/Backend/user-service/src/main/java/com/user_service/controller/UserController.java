@@ -22,9 +22,7 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("/api/v1/customers")
 @RequiredArgsConstructor
-@CrossOrigin("*")
-
-
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class UserController {
 
     private final UserService userService;
@@ -43,12 +41,16 @@ public class UserController {
 
     
     @GetMapping("/validate")
-    public ResponseEntity<UserDTO> validateToken(@RequestHeader("Authorization") String authorization) {
-        UserDTO dto = userService.validateAndGetUser(authorization);
+    public ResponseEntity<UserDTO> validateToken(@RequestHeader("Authorization") String token) {
+        System.out.println("Authorization header = " + token);
+        String actualToken = token.startsWith("Bearer ") ? token.substring(7) : token;
+        System.out.println("Actual token = " + actualToken);
+        UserDTO dto = userService.validateAndGetUser(actualToken);
         return ResponseEntity.ok(dto);
     }
 
-    // Optional: get user by id/email for UI
+
+
     @GetMapping("/{id}")
     public ResponseEntity<UserDTO> getById(@PathVariable Long id) {
         // you might add findById endpoint; using email-based retrieval is used for validate

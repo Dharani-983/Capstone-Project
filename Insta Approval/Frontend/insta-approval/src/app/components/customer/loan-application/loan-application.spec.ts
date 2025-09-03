@@ -23,15 +23,4 @@ describe('LoanApplication', () => {
   it('should create the component', () => {
     expect(component).toBeTruthy();
   });
-
-  it('form invalid when empty', () => {
-    expect(component.loanForm.valid).toBeFalsy();
-  });
-
-  it('should enable submit when form valid', () => {
-    component.loanForm.controls['customerId'].setValue('1');
-    component.loanForm.controls['loanTypeId'].setValue('1');
-    component.loanForm.controls['loanAmount'].setValue(5000);
-    expect(component.loanForm.valid).toBeTruthy();
-  });
 });

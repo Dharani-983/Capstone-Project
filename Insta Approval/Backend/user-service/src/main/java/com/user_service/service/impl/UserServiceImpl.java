@@ -52,21 +52,16 @@ public class UserServiceImpl implements UserService {
                 .build();
 
         Role role = roleRepo.findByName("CUSTOMER")
-                .orElseThrow(() -> new ResourceNotFoundException(
-                        ErrorMessages.ROLE_NOT_FOUND + "CUSTOMER"
-                ));
+                .orElseThrow(() -> new ResourceNotFoundException(ErrorMessages.ROLE_NOT_FOUND + "CUSTOMER"));
 
         u.getRoles().add(role);
         User saved = userRepo.save(u);
 
-        // still create token but don’t return it here
-        String token = jwtUtil.generateToken(saved.getEmail(), saved.getRoles());
-
         UserDTO dtoResp = mapper.map(saved, UserDTO.class);
         dtoResp.setRoles(saved.getRoles().stream().map(Role::getName).collect(Collectors.toSet()));
+
         return dtoResp;
     }
-
 
     @Override
     public AuthResponseDTO login(AuthRequestDTO auth) {
@@ -77,8 +72,13 @@ public class UserServiceImpl implements UserService {
             throw new BadRequestException(ErrorMessages.INVALID_EMAIL_PASSWORD);
         }
 
-        String token = jwtUtil.generateToken(u.getEmail(), u.getRoles());
-        return AuthResponseDTO.builder().email(u.getEmail()).token(token).build();
+        
+        String token = jwtUtil.generateToken(u.getUserId(), u.getEmail(), u.getRoles());
+
+        return AuthResponseDTO.builder()
+                .email(u.getEmail())
+                .token(token)
+                .build();
     }
 
     @Override
@@ -93,13 +93,22 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDTO validateAndGetUser(String tokenHeader) {
         String token = normalizeToken(tokenHeader);
-        try {
-            var claims = jwtUtil.validateTokenAndGetClaims(token);
-            String email = claims.getSubject();
-            return getUserByEmail(email);
-        } catch (io.jsonwebtoken.JwtException ex) {
+
+        if (!jwtUtil.validateToken(token)) {
             throw new BadRequestException(ErrorMessages.TOKEN_INVALID);
         }
+
+        Long userId = jwtUtil.extractUserId(token);
+        if (userId == null) {
+            throw new BadRequestException(ErrorMessages.TOKEN_INVALID);
+        }
+
+        User u = userRepo.findById(userId)
+                .orElseThrow(() -> new ResourceNotFoundException(ErrorMessages.USER_NOT_FOUND));
+
+        UserDTO dto = mapper.map(u, UserDTO.class);
+        dto.setRoles(u.getRoles().stream().map(Role::getName).collect(Collectors.toSet()));
+        return dto;
     }
 
     private String normalizeToken(String header) {

@@ -11,6 +11,6 @@ import com.loan_transaction.entity.LoanApplication;
 @Repository
 public interface LoanApplicationRepository extends JpaRepository<LoanApplication, Long> {
 	List<LoanApplication> findByStatus(LoanStatus status);
-	List<LoanApplication> findByCustomerId(Long customerId);
+	List<LoanApplication> findByUserId(Long userId);
 
 }

@@ -8,7 +8,6 @@ import java.util.List;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.loan_transaction.client.CustomerClient;
 import com.loan_transaction.constants.ErrorMessages;
@@ -16,6 +15,7 @@ import com.loan_transaction.domain.DocumentType;
 import com.loan_transaction.domain.LoanStatus;
 import com.loan_transaction.dto.LoanApplicationRequestDTO;
 import com.loan_transaction.dto.LoanApplicationResponseDTO;
+import com.loan_transaction.dto.LoanTypeRequestDTO;
 import com.loan_transaction.dto.UserDTO;   // ✅ use UserDTO now
 import com.loan_transaction.entity.Document;
 import com.loan_transaction.entity.LoanApplication;
@@ -25,7 +25,6 @@ import com.loan_transaction.exception.ResourceNotFoundException;
 import com.loan_transaction.repositroy.DocumentRepository;
 import com.loan_transaction.repositroy.LoanApplicationRepository;
 import com.loan_transaction.repositroy.LoanTypeRepository;
-import com.loan_transaction.service.FileStorageService;
 import com.loan_transaction.service.LoanService;
 
 import lombok.RequiredArgsConstructor;
@@ -37,7 +36,6 @@ public class LoanServiceImpl implements LoanService {
     private final LoanApplicationRepository loanRepo;
     private final LoanTypeRepository loanTypeRepo;
     private final CustomerClient customerClient;
-    private final FileStorageService fileStorageService;
     private final DocumentRepository documentRepo;
     private final ModelMapper modelMapper;
 
@@ -47,18 +45,20 @@ public class LoanServiceImpl implements LoanService {
     public LoanApplicationResponseDTO applyForLoan(LoanApplicationRequestDTO request, String token) {
         validateLoanAmount(request.getLoanAmount());
 
-        // ✅ Now using UserDTO
-        UserDTO user = customerClient.validateToken(token);
+        
+        UserDTO user = customerClient.validateToken();
+
 
         LoanType loanType = loanTypeRepo.findById(request.getLoanTypeId())
                 .orElseThrow(() -> new ResourceNotFoundException(ErrorMessages.LOAN_TYPE_NOT_FOUND));
 
         LoanApplication loan = LoanApplication.builder()
-                .customerId(user.getUserId())  // ✅ changed from getCustomerId() to getUserId()
+                .userId(user.getUserId())  // ✅ changed from getCustomerId() to getUserId()
                 .loanType(loanType)
                 .loanAmount(request.getLoanAmount())
                 .applicationDate(LocalDateTime.now())
                 .status(LoanStatus.PENDING)
+                .remarks("Application submitted")
                 .cibilSnapshot(user.getCibilScore())
                 .build();
 
@@ -98,28 +98,41 @@ public class LoanServiceImpl implements LoanService {
         loanRepo.save(loan);
     }
 
-    @Override
-    public List<String> uploadDocuments(Long loanId, List<MultipartFile> files, List<DocumentType> types) {
+    public List<String> uploadDocuments(Long loanId, List<String> contents, List<DocumentType> types) {
         LoanApplication loan = fetchLoanById(loanId);
         checkPendingStatus(loan);
 
-        if (files.size() != types.size()) {
-            throw new InvalidActionException("Files and types must match in size");
+        if (contents.size() != types.size()) {
+            throw new InvalidActionException("Contents and types must match in size");
         }
 
-        List<String> uploadedFiles = new ArrayList<>();
-        for (int i = 0; i < files.size(); i++) {
-            String path = fileStorageService.storeFile(files.get(i));
+        List<String> uploadedContents = new ArrayList<>();
+        for (int i = 0; i < contents.size(); i++) {
             Document doc = Document.builder()
                     .application(loan)
                     .documentType(types.get(i))
-                    .filePath(path)
+                    .fileContent(contents.get(i))  
                     .uploadDate(LocalDateTime.now())
                     .build();
             documentRepo.save(doc);
-            uploadedFiles.add(path);
+            uploadedContents.add(contents.get(i));
         }
-        return uploadedFiles;
+        return uploadedContents;
+    }
+
+    public LoanType createLoanType(LoanTypeRequestDTO dto) {
+        if (loanTypeRepo.existsByTypeName(dto.getTypeName())) {
+            throw new RuntimeException("Loan type already exists!");
+        }
+        LoanType loanType = LoanType.builder()
+                .typeName(dto.getTypeName())
+                .description(dto.getDescription())
+                .build();
+        return loanTypeRepo.save(loanType);
+    }
+
+    public List<LoanType> getAllLoanTypes() {
+        return loanTypeRepo.findAll();
     }
 
     private void validateLoanAmount(BigDecimal amount) {

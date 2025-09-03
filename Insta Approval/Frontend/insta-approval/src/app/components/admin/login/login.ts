@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./login.css'],
   imports: [MatCardModule, FormsModule, MatInputModule, CommonModule]
 })
-export class Login {
+export class AdminLogin {
   constructor(private http: HttpClient, private router: Router) {}
 
  onSubmit(formValue: { email: string; password: string }) {
@@ -21,12 +21,12 @@ export class Login {
     'http://localhost:8081/api/v1/customers/login',
     { email: formValue.email, password: formValue.password } // <-- send as object
   ).subscribe({
-    next: (res) => {
-      localStorage.setItem('jwt', res.token); // save token
-      console.log('✅ Logged in, token =', res.token);
-
+     next: (response) => {
+        // Store token in localStorage
+        localStorage.setItem('token', response.token);
+        console.log('Login successful, token saved.', response.token);
       // Redirect to /customer
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/view-applications']);
     },
     error: (err) => {
       console.error('❌ Login failed:', err);

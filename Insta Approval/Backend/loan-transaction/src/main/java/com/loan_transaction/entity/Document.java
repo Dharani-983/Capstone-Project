@@ -39,8 +39,9 @@ public class Document {
     @Column(nullable = false)
     private DocumentType documentType;
 
-    @Column(nullable = false)
-    private String filePath;	
+    @Column(nullable = false, columnDefinition = "TEXT")
+    private String fileContent; 
+
 
     @Column(nullable = false)
     private LocalDateTime uploadDate;

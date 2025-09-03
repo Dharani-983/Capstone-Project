@@ -2,8 +2,6 @@ package com.loan_transaction.controller;
 
 import java.util.List;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,13 +14,12 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.loan_transaction.domain.DocumentType;
 import com.loan_transaction.dto.LoanApplicationRequestDTO;
 import com.loan_transaction.dto.LoanApplicationResponseDTO;
+import com.loan_transaction.dto.LoanTypeRequestDTO;
+import com.loan_transaction.entity.LoanType;
 import com.loan_transaction.service.LoanService;
 
 import lombok.RequiredArgsConstructor;
@@ -35,7 +32,7 @@ public class LoanController {
 
     private final LoanService loanService;
 
-    // Apply for Loan
+    
     @PostMapping("/apply")
     public ResponseEntity<LoanApplicationResponseDTO> applyForLoan(
             @RequestBody LoanApplicationRequestDTO request,
@@ -45,14 +42,14 @@ public class LoanController {
         return ResponseEntity.ok(response);
     }
 
-    // Get Loan Status
+    
     @GetMapping("/{loanId}/status")
     public ResponseEntity<LoanApplicationResponseDTO> getLoanStatus(@PathVariable Long loanId) {
         LoanApplicationResponseDTO response = loanService.getLoanStatus(loanId);
         return ResponseEntity.ok(response);
     }
 
-    // Update Loan
+   
     @PutMapping("/{loanId}")
     public ResponseEntity<LoanApplicationResponseDTO> updateLoan(
             @PathVariable Long loanId,
@@ -63,7 +60,7 @@ public class LoanController {
         return ResponseEntity.ok(response);
     }
 
-    // Cancel Loan
+    
     @DeleteMapping("/{loanId}")
     public ResponseEntity<Void> cancelLoan(
             @PathVariable Long loanId,
@@ -73,32 +70,26 @@ public class LoanController {
         return ResponseEntity.noContent().build();
     }
 
-    // Upload Documents
+    
     @PostMapping("/{loanId}/documents")
     public ResponseEntity<List<String>> uploadDocuments(
             @PathVariable Long loanId,
-            @RequestParam("files") List<MultipartFile> files,
+            @RequestParam("contents") List<String> contents,  
             @RequestParam("types") List<DocumentType> types,
             @RequestHeader("Authorization") String token) {
 
-        List<String> uploadedFiles = loanService.uploadDocuments(loanId, files, types);
-        return ResponseEntity.ok(uploadedFiles);
+        List<String> uploadedContents = loanService.uploadDocuments(loanId, contents, types);
+        return ResponseEntity.ok(uploadedContents);
     }
-    @Configuration
-    public class WebConfig {
 
-        @Bean
-        public WebMvcConfigurer corsConfigurer() {
-            return new WebMvcConfigurer() {
-                @Override
-                public void addCorsMappings(CorsRegistry registry) {
-                    registry.addMapping("/**")
-                            .allowedOrigins("http://localhost:4200") // frontend URL
-                            .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-                            .allowedHeaders("*")
-                            .allowCredentials(true);
-                }
-            };
-        }
+    
+    @PostMapping("/type")
+    public LoanType createLoanType(@RequestBody LoanTypeRequestDTO dto) {
+        return loanService.createLoanType(dto);
+    }
+
+    @GetMapping("/types")
+    public List<LoanType> getAllLoanTypes() {
+        return loanService.getAllLoanTypes();
     }
 }

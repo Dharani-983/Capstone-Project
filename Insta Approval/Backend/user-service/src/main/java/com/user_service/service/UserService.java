@@ -1,5 +1,7 @@
 package com.user_service.service;
 
+import java.util.List;
+
 import com.user_service.dto.AuthRequestDTO;
 import com.user_service.dto.AuthResponseDTO;
 import com.user_service.dto.RegisterDTO;

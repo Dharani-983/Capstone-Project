@@ -7,7 +7,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
 
-
 @Configuration
 public class FeignConfig {
 

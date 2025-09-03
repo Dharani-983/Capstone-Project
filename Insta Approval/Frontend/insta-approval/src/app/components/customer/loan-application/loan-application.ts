@@ -1,94 +1,82 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common'; // For *ngIf and *ngFor
-import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { Loanservice } from '../service/loan-service';
+import { Router } from '@angular/router';
+
+type LoanTypeVm = { id: number; name: string };
 
 @Component({
   selector: 'app-loan-application',
-  templateUrl: './loan-application.html',
-  styleUrls: ['./loan-application.css'],
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule]
+  imports: [FormsModule, CommonModule],
+  templateUrl: './loan-application.html',
+  styleUrls: ['./loan-application.css']
 })
-export class LoanApplication {
-  loanForm!: FormGroup;
-  loanTypes = [
-    { id: 1, name: 'Interest-Free Car Loan' },
-    { id: 2, name: 'Car Loan 0% First Year' }
-  ];
-  selectedFiles: { [key: string]: File[] } = {};
-  statusMessage = '';
+export class LoanApplication implements OnInit {
+  loanApplication: { userId: number; loanTypeId: number | null; loanAmount: number | null } = {
+    userId: 0,
+    loanTypeId: null,
+    loanAmount: null
+  };
 
-  constructor(private fb: FormBuilder, private http: HttpClient) {}
+  loanTypes: LoanTypeVm[] = [];
+  message = '';
 
-  ngOnInit(): void {
-    // Initialize form
-    this.loanForm = this.fb.group({
-      name: [{ value: 'John Doe', disabled: true }],
-      email: [{ value: 'john.doe@example.com', disabled: true }],
-      employer: ['', Validators.required],
-      income: ['', Validators.required],
-      loanTypeId: ['', Validators.required],
-      loanAmount: ['', [Validators.required, Validators.min(1000)]],
+  constructor(private loanService: Loanservice, private router: Router) {}
+
+  ngOnInit() {
+    this.loanService.getAllLoanTypes().subscribe({
+      next: (data: any[]) => {
+        console.log('Raw loan types:', data);
+
+        // Normalize whatever the backend returns to {id, name}
+        this.loanTypes = (data || [])
+          .map((t: any) => ({
+            id: Number(t.id ?? t.loanTypeId ?? t.typeId ?? t.loanTypeID),
+            name: String(t.name ?? t.typeName ?? t.loanTypeName ?? t.type ?? t.title ?? 'Unnamed')
+          }))
+          .filter(t => Number.isFinite(t.id));
+
+        console.log('Normalized loan types:', this.loanTypes);
+
+        // Optional: auto-select first type
+        // if (this.loanTypes.length && this.loanApplication.loanTypeId == null) {
+        //   this.loanApplication.loanTypeId = this.loanTypes[0].id;
+        // }
+      },
+      error: (err) => console.error('Failed to fetch loan types', err)
     });
-  }
-
-  onFileSelected(event: any, type: string) {
-    const files: FileList = event.target.files;
-    if (files && files.length > 0) {
-      this.selectedFiles[type] = Array.from(files);
-    }
   }
 
   onSubmit() {
-    if (this.loanForm.invalid) {
-      this.statusMessage = 'Please fill all required fields correctly.';
-      return;
-    }
-
-    const token = localStorage.getItem('authToken') || '';
-    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-
     const payload = {
-      customerId: 1, // assume logged in user
-      loanTypeId: this.loanForm.getRawValue().loanTypeId, // getRawValue because name/email are disabled
-      loanAmount: this.loanForm.getRawValue().loanAmount,
-      remarks: 'New Loan Application'
+      userId: Number(this.loanApplication.userId),
+      loanTypeId: Number(this.loanApplication.loanTypeId),
+      loanAmount: Number(this.loanApplication.loanAmount)
     };
 
-    // Step 1: Apply for loan
-    this.http.post<any>('http://localhost:8082/loans/apply', payload, { headers })
-      .subscribe({
-        next: (res) => {
-          const loanId = res.applicationId;
-          this.uploadDocuments(loanId, headers);
-        },
-        error: () => this.statusMessage = 'Loan application failed!'
-      });
-  }
-
-  uploadDocuments(loanId: number, headers: HttpHeaders) {
-    if (!this.selectedFiles || Object.keys(this.selectedFiles).length === 0) {
-      this.statusMessage = 'Loan application submitted (no documents uploaded).';
+    if (!payload.loanTypeId) {
+      this.message = 'Please select a loan type.';
       return;
     }
 
-    const formData = new FormData();
-    const types: string[] = [];
+    console.log('Submitting application:', payload);
 
-    Object.keys(this.selectedFiles).forEach((type) => {
-      this.selectedFiles[type].forEach((file) => {
-        formData.append('files', file);
-        types.push(type);
-      });
+    this.loanService.applyLoan(payload).subscribe({
+      next: (response) => {
+        console.log('Application saved:', response);
+        this.message = 'Application added successfully!'; 
+        alert('Application submitted successfully!');
+       setTimeout(() => {
+          this.router.navigate(['/loan-tracking']);
+        }, 1500);
+      },
+      error: (err) => {
+        console.error('Error while saving application:', err);
+        this.message = 'Error adding application!';
+        alert('Error adding application');
+      }
     });
-
-    formData.append('types', types.toString());
-
-    this.http.post<any>(`http://localhost:8082/loans/${loanId}/documents`, formData, { headers })
-      .subscribe({
-        next: () => this.statusMessage = 'Loan application submitted successfully!',
-        error: () => this.statusMessage = 'Document upload failed!'
-      });
   }
 }

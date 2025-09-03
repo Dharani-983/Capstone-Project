@@ -1,72 +1,151 @@
-2025-09-01 00:23:08,362 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is not available. Remote download required.
-2025-09-01 00:23:41,596 [Worker-16: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.server:Loan-Api-Gateway:0.0.1-SNAPSHOT @ C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\Loan-Api-Gateway\pom.xml.
-2025-09-01 00:23:55,901 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
-2025-09-01 00:23:55,933 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
-2025-09-01 00:23:55,941 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\Loan-Api-Gateway\src\test\resources
-2025-09-01 00:23:56,568 [Worker-19: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.user:user-service:0.0.1-SNAPSHOT @ C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\user-service\pom.xml.
-2025-09-01 00:23:58,998 [Worker-1: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
-2025-09-01 00:23:59,002 [Worker-1: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
-2025-09-01 00:23:59,026 [Worker-1: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\Loan-Api-Gateway\src\test\resources
-2025-09-01 00:24:00,003 [Worker-1: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.server:Loan-Eureka-Server:0.0.1-SNAPSHOT @ C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\Loan-Eureka-Server\pom.xml.
-2025-09-01 00:24:08,188 [Worker-1: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
-2025-09-01 00:24:08,236 [Worker-1: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
-2025-09-01 00:24:08,244 [Worker-1: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\Loan-Eureka-Server\src\test\resources
-2025-09-01 00:24:08,796 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
-2025-09-01 00:24:08,800 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
-2025-09-01 00:24:08,807 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\Loan-Eureka-Server\src\test\resources
-2025-09-01 00:24:10,856 [Worker-14: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.loan:loan-transaction:0.0.1-SNAPSHOT @ C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\pom.xml.
-2025-09-01 00:24:15,201 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
-2025-09-01 00:24:15,220 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
-2025-09-01 00:24:15,227 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
-2025-09-01 00:24:16,556 [Worker-22: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.user:user-service:0.0.1-SNAPSHOT @ C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\user-service\pom.xml.
-2025-09-01 00:24:16,710 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
-2025-09-01 00:24:16,715 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
-2025-09-01 00:24:16,720 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
-2025-09-01 00:24:18,154 [Worker-7: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.user:user-service:0.0.1-SNAPSHOT @ C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\user-service\pom.xml.
-2025-09-01 00:24:19,636 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
-2025-09-01 00:24:19,658 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
-2025-09-01 00:24:19,665 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\user-service\src\test\resources
-2025-09-01 00:24:20,764 [Worker-3: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.user:user-service:0.0.1-SNAPSHOT @ C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\user-service\pom.xml.
-2025-09-01 00:24:21,919 [Worker-8: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
-2025-09-01 00:24:21,948 [Worker-8: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
-2025-09-01 00:24:21,955 [Worker-8: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\user-service\src\test\resources
-2025-09-01 00:24:22,056 [Worker-3: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.server:Loan-Api-Gateway:0.0.1-SNAPSHOT @ C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\Loan-Api-Gateway\pom.xml.
-2025-09-01 00:24:23,429 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
-2025-09-01 00:24:23,431 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
-2025-09-01 00:24:23,437 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\user-service\src\test\resources
-2025-09-01 00:25:24,076 [Worker-12: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
-2025-09-01 00:25:24,615 [Worker-12: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.user:user-service:0.0.1-SNAPSHOT @ C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\user-service\pom.xml.
-2025-09-01 00:25:25,917 [Worker-12: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /user-service/src/main/java
-2025-09-01 00:25:25,921 [Worker-12: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /user-service/src/main/resources
-2025-09-01 00:25:25,923 [Worker-12: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /user-service/src/main/resources
-2025-09-01 00:25:25,924 [Worker-12: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /user-service/src/test/java
-2025-09-01 00:25:25,926 [Worker-12: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /user-service/src/test/resources
-2025-09-01 00:25:26,576 [Worker-12: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 1 poms: local refresh takes 0.00 sec, refresh facades takes 1.00 sec, update config takes 0.00 sec 
-2025-09-01 00:25:27,407 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
-2025-09-01 00:25:27,439 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
-2025-09-01 00:25:27,447 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\user-service\src\test\resources
-2025-09-01 01:02:37,083 [Worker-30: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
-2025-09-01 01:02:37,100 [Worker-30: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
-2025-09-01 01:02:37,107 [Worker-30: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\user-service\src\test\resources
-2025-09-01 01:03:48,588 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
-2025-09-01 01:03:48,698 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
-2025-09-01 01:03:48,707 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\user-service\src\test\resources
-2025-09-01 02:13:47,888 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
-2025-09-01 02:13:47,909 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
-2025-09-01 02:13:47,924 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\user-service\src\test\resources
-2025-09-01 02:18:22,379 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
-2025-09-01 02:18:22,408 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
-2025-09-01 02:18:22,414 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\user-service\src\test\resources
-2025-09-01 08:17:07,804 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
-2025-09-01 08:17:41,300 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
-2025-09-01 08:17:41,336 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
-2025-09-01 08:17:41,349 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\user-service\src\test\resources
-2025-09-01 09:10:34,947 [Worker-4: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
-2025-09-01 09:10:35,217 [Worker-4: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
-2025-09-01 09:10:35,225 [Worker-4: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
-2025-09-01 10:18:25,878 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
-2025-09-01 10:18:26,003 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
-2025-09-01 10:18:26,008 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
-2025-09-01 10:20:37,000 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
-2025-09-01 10:20:37,014 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
-2025-09-01 10:20:37,019 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-01 20:17:44,627 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is not available. Remote download required.
+2025-09-01 20:18:21,720 [Worker-1: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.server:Loan-Api-Gateway:0.0.1-SNAPSHOT @ C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\Loan-Api-Gateway\pom.xml.
+2025-09-01 20:18:31,994 [Worker-1: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-01 20:18:32,015 [Worker-1: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-01 20:18:32,021 [Worker-1: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\Loan-Api-Gateway\src\test\resources
+2025-09-01 20:18:33,652 [Worker-18: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.user:user-service:0.0.1-SNAPSHOT @ C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\user-service\pom.xml.
+2025-09-01 20:18:34,595 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-01 20:18:34,620 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-01 20:18:34,627 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\Loan-Api-Gateway\src\test\resources
+2025-09-01 20:18:35,519 [Worker-7: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.server:Loan-Eureka-Server:0.0.1-SNAPSHOT @ C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\Loan-Eureka-Server\pom.xml.
+2025-09-01 20:18:39,874 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-01 20:18:39,895 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-01 20:18:39,902 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\Loan-Eureka-Server\src\test\resources
+2025-09-01 20:18:40,425 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-01 20:18:40,429 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-01 20:18:40,435 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\Loan-Eureka-Server\src\test\resources
+2025-09-01 20:18:41,353 [Worker-16: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.user:user-service:0.0.1-SNAPSHOT @ C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\user-service\pom.xml.
+2025-09-01 20:18:42,163 [Worker-11: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.loan:loan-transaction:0.0.1-SNAPSHOT @ C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\pom.xml.
+2025-09-01 20:18:44,588 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-01 20:18:44,608 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-01 20:18:44,614 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-01 20:18:45,895 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-01 20:18:45,899 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-01 20:18:45,905 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-01 20:18:47,255 [Worker-6: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.user:user-service:0.0.1-SNAPSHOT @ C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\user-service\pom.xml.
+2025-09-01 20:18:49,187 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-01 20:18:49,225 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-01 20:18:49,234 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\user-service\src\test\resources
+2025-09-01 20:18:50,875 [Worker-21: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.user:user-service:0.0.1-SNAPSHOT @ C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\user-service\pom.xml.
+2025-09-01 20:18:51,134 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-01 20:18:51,161 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-01 20:18:51,202 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\user-service\src\test\resources
+2025-09-01 20:18:51,905 [Worker-21: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.server:Loan-Api-Gateway:0.0.1-SNAPSHOT @ C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\Loan-Api-Gateway\pom.xml.
+2025-09-01 20:21:18,980 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-01 20:21:18,988 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-01 20:21:18,992 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-01 20:24:50,461 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-01 20:24:50,471 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-01 20:24:50,478 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\Loan-Eureka-Server\src\test\resources
+2025-09-01 21:03:52,456 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2025-09-01 21:51:16,475 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-01 21:51:16,495 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-01 21:51:16,501 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-01 22:23:03,841 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-01 22:23:03,876 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-01 22:23:03,880 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-01 22:25:43,711 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-01 22:25:43,722 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-01 22:25:43,727 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-02 00:21:50,210 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-02 00:21:50,349 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-02 00:21:50,356 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-02 00:21:54,260 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-02 00:21:54,321 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-02 00:21:54,328 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-02 00:26:01,013 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-02 00:26:01,026 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-02 00:26:01,033 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-02 00:26:18,752 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-02 00:26:18,760 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-02 00:26:18,766 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-02 00:26:23,193 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-02 00:26:23,203 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-02 00:26:23,226 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-02 07:22:47,186 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2025-09-02 07:58:24,225 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-02 07:58:24,310 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-02 07:58:24,322 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-02 10:03:02,798 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-02 10:03:03,019 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-02 10:03:03,041 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-02 10:08:15,883 [Worker-32: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-02 10:08:15,896 [Worker-32: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-02 10:08:15,906 [Worker-32: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-02 10:09:34,916 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-02 10:09:34,937 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-02 10:09:34,973 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-02 10:12:12,324 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-02 10:12:12,341 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-02 10:12:12,350 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-02 10:14:06,465 [Worker-32: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-02 10:14:06,478 [Worker-32: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-02 10:14:06,487 [Worker-32: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-02 10:14:15,576 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-02 10:14:15,645 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-02 10:14:15,662 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\user-service\src\test\resources
+2025-09-02 10:54:38,286 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-02 10:54:38,409 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-02 10:54:38,413 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-02 11:00:48,738 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-02 11:00:48,745 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-02 11:00:48,750 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-02 11:02:01,882 [Worker-32: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-02 11:02:01,895 [Worker-32: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-02 11:02:01,901 [Worker-32: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-02 11:02:48,181 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-02 11:02:48,192 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-02 11:02:48,200 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-02 11:02:52,411 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-02 11:02:52,420 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-02 11:02:52,426 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-02 11:02:57,971 [Worker-32: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-02 11:02:57,993 [Worker-32: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-02 11:02:57,996 [Worker-32: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-02 11:03:39,476 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-02 11:03:39,488 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-02 11:03:39,506 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-02 11:03:49,331 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-02 11:03:49,338 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-02 11:03:49,342 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-02 11:03:59,781 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-02 11:03:59,789 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-02 11:03:59,795 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-02 11:05:01,336 [Worker-32: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-02 11:05:01,347 [Worker-32: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-02 11:05:01,353 [Worker-32: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-02 11:05:35,586 [Worker-32: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-02 11:05:35,596 [Worker-32: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-02 11:05:35,601 [Worker-32: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-02 11:05:48,456 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-02 11:05:48,467 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-02 11:05:48,472 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-02 11:06:33,887 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-02 11:06:33,900 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-02 11:06:33,907 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-02 11:06:43,821 [Worker-32: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-02 11:06:43,829 [Worker-32: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-02 11:06:43,835 [Worker-32: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-02 11:06:58,642 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-02 11:06:58,653 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-02 11:06:58,657 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-02 11:07:10,096 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-02 11:07:10,106 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-02 11:07:10,110 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-02 12:19:42,717 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-02 12:19:42,766 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-02 12:19:42,772 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\loan-transaction\src\test\resources
+2025-09-02 12:21:04,061 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-02 12:21:04,082 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-02 12:21:04,087 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\user-service\src\test\resources
+2025-09-02 12:24:34,134 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-02 12:24:34,195 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-02 12:24:34,208 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\Loan-Api-Gateway\src\test\resources
+2025-09-02 12:29:25,438 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-02 12:29:25,479 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-02 12:29:25,482 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\Loan-Api-Gateway\src\test\resources
+2025-09-02 14:56:48,516 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2025-09-02 14:58:07,612 [Worker-12: Launching LoanApiGatewayApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-02 14:58:07,644 [Worker-12: Launching LoanApiGatewayApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-02 14:58:07,650 [Worker-12: Launching LoanApiGatewayApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\yuva pdtr\Desktop\Capstone Project\Insta Approval\Backend\Loan-Api-Gateway\src\test\resources
+2025-09-02 16:19:18,133 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.

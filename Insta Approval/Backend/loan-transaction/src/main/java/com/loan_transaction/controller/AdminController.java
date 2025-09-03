@@ -1,6 +1,5 @@
 package com.loan_transaction.controller;
 
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,14 +23,11 @@ import lombok.RequiredArgsConstructor;
 public class AdminController {
 
     private final AdminService adminService;
-    private final CustomerClient customerClient;
+    private final CustomerClient customerClient; 
 
     @GetMapping("/pending")
     public ResponseEntity<?> getPendingLoans(@RequestHeader("Authorization") String token) {
-        UserDTO user = customerClient.validateToken(token);
-        if (!user.getRoles().contains("ADMIN")) {
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Access denied: Admin role required");
-        }
+//        UserDTO user = customerClient.validateToken();
         return ResponseEntity.ok(adminService.getPendingLoans());
     }
 
@@ -41,7 +37,7 @@ public class AdminController {
             @RequestBody AdminActionDTO actionDTO,
             @RequestHeader("Authorization") String token) {
 
-        UserDTO user = customerClient.validateToken(token);
+        UserDTO user = customerClient.validateToken();
         if (!user.getRoles().contains("ADMIN")) {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Access denied: Admin role required");
         }
@@ -54,7 +50,7 @@ public class AdminController {
             @RequestBody AdminActionDTO actionDTO,
             @RequestHeader("Authorization") String token) {
 
-        UserDTO user = customerClient.validateToken(token);
+        UserDTO user = customerClient.validateToken();
         if (!user.getRoles().contains("ADMIN")) {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Access denied: Admin role required");
         }

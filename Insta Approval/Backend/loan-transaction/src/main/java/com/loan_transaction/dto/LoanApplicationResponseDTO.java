@@ -9,12 +9,12 @@ import lombok.Data;
 @Data
 public class LoanApplicationResponseDTO {
 	private Long applicationId;
-    private Long customerId;
-    private String loanTypeName;
-    private BigDecimal loanAmount;
-    private LocalDateTime applicationDate;
-    private String status;
-    private String remarks;
-    private Integer cibilSnapshot;
-    private List<String> documents;
+	private Long userId;
+	private String loanTypeName;
+	private BigDecimal loanAmount;
+	private LocalDateTime applicationDate;
+	private String status;
+	private String remarks;
+	private Integer cibilSnapshot;
+	private List<String> documents;
 }

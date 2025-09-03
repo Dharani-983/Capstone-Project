@@ -1,0 +1,46 @@
+<h1>Admin Dashboard - Pending Loans</h1>
+
+<div class="filter-section">
+  <form [formGroup]="filterForm">
+    <label>Status:
+      <select formControlName="status">
+        <option value="">All</option>
+        <option value="PENDING">Pending</option>
+        <option value="APPROVED">Approved</option>
+        <option value="REJECTED">Rejected</option>
+      </select>
+    </label>
+
+<table border="1" cellpadding="10">
+  <thead>
+    <tr>
+      <th>Application ID</th>
+      <th>User ID</th>
+      <th>Loan Type</th>
+      <th>Amount</th>
+      <th>CIBIL</th>
+      <th>Status</th>
+      <th>Remarks</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let loan of filteredLoans">
+  <td>{{ loan['applicationId'] }}</td>
+  <td>{{ loan['userId'] }}</td>
+  <td>{{ loan['loanType']?.['name'] }}</td>
+  <td>{{ loan['loanAmount'] }}</td>
+  <td>{{ loan['cibilSnapshot'] }}</td>
+  <td>{{ loan['status'] }}</td>
+  <input 
+  type="text" 
+  [(ngModel)]="remarksMap[loan['applicationId']]" 
+  [ngModelOptions]="{standalone: true}" 
+  placeholder="Enter remarks"/>
+  <td>
+    <button (click)="approveLoan(loan['applicationId'])">Approve</button>
+    <button (click)="rejectLoan(loan['applicationId'])">Reject</button>
+  </td>
+</tr>
+  </tbody>
+</table>

@@ -7,5 +7,5 @@ import com.loan_transaction.entity.LoanType;
 
 @Repository
 public interface LoanTypeRepository extends JpaRepository<LoanType, Long> {
-
+	boolean existsByTypeName(String typeName);
 }

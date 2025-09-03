@@ -1,52 +1,66 @@
 package com.user_service.utils;
 
-import java.security.Key;
-import java.util.*;
-import java.util.stream.Collectors;
+import java.nio.charset.StandardCharsets;
+import java.util.Date;
+import java.util.Set;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import com.user_service.model.Role;
 
-import io.jsonwebtoken.*;
-
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
+
+import javax.crypto.SecretKey;
 
 @Component
 public class JwtUtil {
 
-    @Value("${jwt.secret}")
-    private String base64Secret;
+    private final SecretKey secretKey;
 
-    @Value("${jwt.expiration-ms:86400000}")
-    private long expirationMs;
-
-    private Key getKey() {
-        byte[] decoded = Base64.getDecoder().decode(base64Secret);
-        return Keys.hmacShaKeyFor(decoded);
+    public JwtUtil() {
+        // Must be at least 32 chars
+        secretKey = Keys.hmacShaKeyFor("My$uper$ecretKey1656!My$uper$ecretKey1656!".getBytes(StandardCharsets.UTF_8));
     }
 
-    public String generateToken(String email, Set<Role> roles) {
-        Key key = getKey();
-        Map<String, Object> claims = new HashMap<>();
-        claims.put("roles", roles.stream().map(Role::getName).collect(Collectors.toList()));
-        Date now = new Date();
-        Date exp = new Date(now.getTime() + expirationMs);
+    // ✅ New method: generate token with userId + email + roles
+    public String generateToken(Long userId, String email, Set<Role> roles) {
         return Jwts.builder()
-                .setClaims(claims)
                 .setSubject(email)
-                .setIssuedAt(now)
-                .setExpiration(exp)
-                .signWith(key)
+                .claim("userId", userId)
+                .claim("roles", roles.stream().map(Role::getName).toList())
+                .setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis() + 86400000)) // 1 day expiry
+                .signWith(secretKey)
                 .compact();
     }
 
-    /**
-     * Validate token and return claims. Throws JwtException on invalid.
-     */
-    public Claims validateTokenAndGetClaims(String token) {
-        Key key = getKey();
-        return Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token).getBody();
+    public Long extractUserId(String token) {
+        Claims claims = getClaims(token);
+        Object userIdObj = claims.get("userId");
+
+        if (userIdObj instanceof Number) {
+            return ((Number) userIdObj).longValue();
+        } else if (userIdObj instanceof String) {
+            return Long.parseLong((String) userIdObj);
+        }
+        return null;
+    }
+
+    public boolean validateToken(String token) {
+        return !isTokenExpired(token);
+    }
+
+    private boolean isTokenExpired(String token) {
+        return getClaims(token).getExpiration().before(new Date());
+    }
+
+    private Claims getClaims(String token) {
+        return Jwts.parserBuilder()
+                   .setSigningKey(secretKey)
+                   .build()
+                   .parseClaimsJws(token)
+                   .getBody();
     }
 }

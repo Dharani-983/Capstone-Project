@@ -7,7 +7,6 @@ import java.util.List;
 import com.loan_transaction.domain.LoanStatus;
 
 import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -35,24 +34,19 @@ public class LoanApplication {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long applicationId;
 
-    @Column(nullable = false)
-    private Long customerId;
+    private Long userId;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "loan_type_id")
     private LoanType loanType;
 
-    @Column(nullable = false, precision = 12, scale = 2)
     private BigDecimal loanAmount;
 
-    @Column(nullable = false)
     private LocalDateTime applicationDate;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
     private LoanStatus status;
 
-    @Column(length = 1000)
     private String remarks; 
 
     private Integer cibilSnapshot;

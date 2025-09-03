@@ -1,42 +1,52 @@
 package com.loan_transaction.util;
 
-import java.util.Base64;
-
-import javax.crypto.SecretKey;
+import java.nio.charset.StandardCharsets;
+import java.util.Date;
 
 import org.springframework.stereotype.Component;
-import com.loan_transaction.service.SecretProvider;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
-import lombok.RequiredArgsConstructor;
 
-
+import javax.crypto.SecretKey;
 
 @Component
-@RequiredArgsConstructor
 public class JwtUtil {
 
-    private final SecretProvider secretProvider;
+    private final SecretKey secretKey;
 
-
-    private SecretKey getSigningKey() {
-        String secret = secretProvider.getSecret();
-        return Keys.hmacShaKeyFor(Base64.getDecoder().decode(secret));
+    public JwtUtil() {
+        
+        secretKey = Keys.hmacShaKeyFor("My$uper$ecretKey1656!My$uper$ecretKey1656!".getBytes(StandardCharsets.UTF_8));
     }
 
-    public Claims getClaims(String token) {
+    public Long extractUserId(String token) {
+    	Claims claims = getClaims(token); 
+        Object userIdObj = claims.get("userId");
+        
+        if (userIdObj instanceof Number) {
+            return ((Number) userIdObj).longValue(); 
+        } else if (userIdObj instanceof String) {
+            return Long.parseLong((String) userIdObj);
+        }
+        
+        return null;
+    }
+    
+    public boolean validateToken(String token) {
+        return !isTokenExpired(token);
+    }
+
+    private boolean isTokenExpired(String token) {
+        return getClaims(token).getExpiration().before(new Date());
+    }
+
+    private Claims getClaims(String token) {
         return Jwts.parserBuilder()
-                .setSigningKey(getSigningKey())
-                .build()
-                .parseClaimsJws(token.replace("Bearer ", ""))
-                .getBody();
-    }
-
-    public String extractEmail(String token) {
-        return getClaims(token).getSubject();
+                   .setSigningKey(secretKey)
+                   .build()
+                   .parseClaimsJws(token)
+                   .getBody();
     }
 }
-
-

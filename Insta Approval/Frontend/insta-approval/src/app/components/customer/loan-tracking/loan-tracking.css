@@ -1,0 +1,134 @@
+/* ===== Tracking Page ===== */
+.tracking-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f3f6fb, #e6ecf7);
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== Card ===== */
+.tracking-card {
+  background: #fff;
+  max-width: 500px;
+  width: 100%;
+  padding: 25px 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* ===== Header ===== */
+.card-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.card-header i {
+  font-size: 32px;
+  color: #4a90e2;
+}
+.card-header h2 {
+  margin: 10px 0 5px;
+  font-size: 24px;
+  color: #333;
+}
+.card-header .subtitle {
+  font-size: 14px;
+  color: #777;
+}
+
+/* ===== Form Group ===== */
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+  color: #444;
+}
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  outline: none;
+  transition: 0.3s;
+}
+.form-group input:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.4);
+}
+.form-group button {
+  margin-top: 12px;
+  width: 100%;
+  padding: 12px;
+  background: #4a90e2;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.form-group button:disabled {
+  background: #9bbce4;
+  cursor: not-allowed;
+}
+.form-group button:hover:not(:disabled) {
+  background: #357abd;
+}
+
+/* ===== Error Alert ===== */
+.alert.error {
+  background: #ffe5e5;
+  color: #d8000c;
+  border: 1px solid #ffbaba;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* ===== Loan Status Card ===== */
+.status-card {
+  background: #f9fafc;
+  border: 1px solid #e1e5ec;
+  border-radius: 12px;
+  padding: 20px;
+}
+.status-card h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #4a90e2;
+  display: flex;
+  align-items: center;
+}
+.status-card h3 i {
+  margin-right: 8px;
+}
+.status-card p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #444;
+}
+.status-card strong {
+  color: #222;
+}
+
+/* ===== Animation ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .tracking-card {
+    padding: 20px;
+  }
+  .card-header h2 {
+    font-size: 20px;
+  }
+}

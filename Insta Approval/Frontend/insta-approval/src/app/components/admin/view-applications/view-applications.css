@@ -1,0 +1,152 @@
+/* ===== Body & Background ===== */
+:host {
+  display: block;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #e0e7ff, #fef3c7);
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* ===== Page Header ===== */
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #1f2937;
+  text-align: center;
+}
+
+/* ===== Filter Section ===== */
+.filter-section {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.filter-section label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: #333;
+}
+
+.filter-section input, .filter-section select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+}
+
+/* ===== Table Container ===== */
+.table-wrapper {
+  overflow-x: auto; /* scroll horizontally if needed */
+  display: flex;
+  justify-content: center;
+}
+
+/* ===== Table Styling ===== */
+table {
+  width: 100%;
+  max-width: 1200px; /* prevents it from stretching too much */
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  table-layout: auto; /* columns size to content */
+}
+
+thead {
+  background-color: #4f46e5; /* Indigo */
+  color: #fff;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  word-wrap: break-word;
+  vertical-align: middle;
+}
+
+tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.2s ease-in-out;
+}
+
+tbody tr:hover {
+  background-color: #f3f4f6;
+}
+
+input[type="text"] {
+  padding: 6px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ===== Buttons ===== */
+button {
+  padding: 6px 12px;
+  margin-right: 6px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+button:first-child {
+  background-color: #10b981; /* Green */
+  color: #fff;
+}
+
+button:last-child {
+  background-color: #ef4444; /* Red */
+  color: #fff;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 1024px) {
+  .table-wrapper {
+    padding-bottom: 15px;
+  }
+
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead tr {
+    display: none;
+  }
+
+  tbody tr {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e5e7eb;
+  }
+
+  td {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 10px;
+    border: none;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  td:before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #555;
+  }
+}
